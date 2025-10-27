@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  font-family: "Orbitron", sans-serif;
+  background: radial-gradient(circle at bottom left, #002850, #00081a);
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+  align-items: center;
+  gap: 3rem;
+}
+
+.left-side {
+  text-align: center;
+  flex: 1;
+}
+
+.title {
+  font-size: 5rem;
+  font-weight: 800;
+  color: #6ec1ff;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #8fd0ff;
+}
+
+.logo-circle {
+  background: radial-gradient(circle, #0099ff, #003366);
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-circle img {
+  width: 120px;
+  height: auto;
+}
+
+.tagline {
+  color: #66b3ff;
+  letter-spacing: 1px;
+  font-size: 1rem;
+}
+
+.right-side {
+  background: rgba(0, 50, 100, 0.6);
+  border-radius: 15px;
+  padding: 40px;
+  width: 380px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 15px #00aaff;
+}
+
+.right-side h2 {
+  text-align: center;
+  color: #9ddcff;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  outline: none;
+}
+
+input::placeholder {
+  color: #ddd;
+}
+
+button {
+  padding: 12px;
+  background: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #0088ff;
+}
+
+a {
+  color: #9ddcff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
