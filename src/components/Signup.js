@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Signup() {
+  const navigate = useNavigate(); // ✅ For redirecting inside React Router
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -16,7 +17,6 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // simple frontend check
     if (formData.password !== formData.password2) {
       alert("Passwords do not match!");
       return;
@@ -31,11 +31,11 @@ function Signup() {
 
       if (response.ok) {
         alert("Account created successfully! You can now log in.");
-        window.location.href = "/login";
+        navigate("/login"); // ✅ smooth redirect instead of window.location.href
       } else {
         const data = await response.json();
         console.error("Signup error:", data);
-        alert("Signup failed: " + JSON.stringify(data));
+        alert("Signup failed: " + (data.detail || JSON.stringify(data)));
       }
     } catch (error) {
       console.error("Network error:", error);
@@ -91,8 +91,7 @@ function Signup() {
           <button type="submit">Sign Up</button>
         </form>
         <p>
-          Already have an account?{" "}
-          <a href="http://localhost:3000/login">Login</a>
+          Already have an account? <Link to="/login">Login</Link>
         </p>
       </div>
     </div>
