@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-function Login({ onLogin }) {
+function Login() {
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -19,7 +20,7 @@ function Login({ onLogin }) {
       localStorage.setItem("access", data.access);
       localStorage.setItem("refresh", data.refresh);
       alert("Login successful!");
-      onLogin();
+      navigate("/home"); // ✅ Navigate directly after login
     } else {
       alert("Invalid credentials");
     }
