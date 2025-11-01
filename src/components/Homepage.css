@@ -1,0 +1,231 @@
+/* --- GLOBAL --- */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom right, #e6f4ff, #cfe3ff);
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.homepage-wrapper,
+.summarization-page {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  align-items: flex-start; /* ensures top edges align perfectly */
+  justify-content: flex-start;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 20px; /* ✅ adds even outer spacing for both sidebar and content */
+  gap: 20px; /* ✅ consistent spacing between sidebar and content */
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+  width: 260px;
+  min-width: 260px;
+  background: #e8f2fb;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 15px 20px 20px 20px; /* ⬆️ reduced top padding */
+  border-radius: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  height: calc(100vh - 40px);
+  position: relative;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px; /* ⬆️ reduced spacing below logo */
+}
+
+.logo-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #4f8ef7;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.logo-text {
+  color: #1a2a5a;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 0.95rem;
+  padding: 8px 10px;
+  border-radius: 10px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.menu-item:hover,
+.menu-item.active {
+  background: #d0e5ff;
+}
+
+.menu-item.logout {
+  margin-top: auto;
+  color: #e74c3c;
+}
+
+.divider {
+  margin: 10px 0;
+  border: none;
+  border-top: 1px solid #c7d9ec;
+}
+
+/* --- MAIN CONTENT --- */
+.content {
+  flex: 1;
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 1050px;
+  height: calc(100vh - 40px);
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+/* --- TITLES --- */
+.main-title {
+  font-size: 1.8rem;
+  color: #1a2a5a;
+  font-weight: bold;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* --- TEXT AREAS --- */
+.text-area {
+  width: 100%;
+  height: 250px;
+  min-height: 250px;
+  max-height: 250px;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #b0c4de;
+  resize: none;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  overflow-y: auto !important;
+}
+
+/* ✅ Scrollable fixed summary box */
+.text-area.summary-output {
+  height: 180px;
+  min-height: 180px;
+  max-height: 180px;
+  background-color: #f9fbff;
+  border: 1px solid #b0c4de;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-y: auto; /* ✅ enables scroll only when needed */
+  resize: none;
+  box-sizing: border-box;
+}
+
+/* ✅ Modern thin scrollbar */
+.text-area.summary-output::-webkit-scrollbar {
+  width: 6px;
+}
+
+.text-area.summary-output::-webkit-scrollbar-track {
+  background: #f0f4fa;
+  border-radius: 10px;
+}
+
+.text-area.summary-output::-webkit-scrollbar-thumb {
+  background-color: #b0c4de;
+  border-radius: 10px;
+}
+
+.text-area.summary-output::-webkit-scrollbar-thumb:hover {
+  background-color: #8aa4c8;
+}
+
+/* --- BUTTONS --- */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.upload-button,
+.segment-button,
+.summary-button {
+  padding: 12px 20px;
+  background-color: #4f8ef7;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.upload-button:hover,
+.segment-button:hover,
+.summary-button:hover {
+  background-color: #3a6ed1;
+}
+
+.clear-button {
+  background-color: #9ca3af;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.clear-button:hover {
+  background-color: #6b7280;
+}
+
+/* --- FOOTER --- */
+.footer {
+  text-align: center;
+  color: #1a2a5a;
+  font-weight: 600;
+  margin-top: auto;
+  font-size: 0.9rem;
+}
